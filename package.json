@@ -1,0 +1,46 @@
+{
+  "name": "workclimb-project",
+  "version": "1.0.0",
+  "description": "Este projeto tem como objetivo implementar de forma progressiva e didática uma aplicação web voltada para o mercado de empregos, permitindo que usuários consultem vagas disponíveis, cadastrem novas oportunidades e gerem seus próprios currículos de maneira simples e rápida. O diferencial da aplicação está na proposta de centralizar, de forma intuitiva, as principais ações envolvidas na busca e oferta de trabalho.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "build": "echo 'Sem build necessário para o back-end em JavaScript puro.'",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandrolarson/workclimb-project.git"
+  },
+  "keywords": [
+    "empregos",
+    "vaga",
+    "trabalho",
+    "currículo",
+    "webapp",
+    "nodejs",
+    "express"
+  ],
+  "author": "Leandro Larson",
+  "contributors": [
+    {
+      "name": "Leandro Larson",
+      "email": "leandrolarson@alunos.utfpr.edu.br",
+      "url": "https://github.com/leandrolarson"
+    }
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leandrolarson/workclimb-project/issues"
+  },
+  "homepage": "https://github.com/leandrolarson/workclimb-project#readme",
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "xyz": "^5.0.0"
+  },
+  "devDependencies": {
+    "abc": "^0.6.1",
+    "gh-pages": "^6.3.0"
+  }
+}

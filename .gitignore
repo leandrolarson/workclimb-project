@@ -1,0 +1,20 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+
+# dotenv / configs
+.env
+
+# Test coverage
+coverage/
+
+# Editor configs
+.vscode/
+.idea/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db

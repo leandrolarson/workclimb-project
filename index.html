@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- No <head> -->
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>WorkClimb</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-white border-bottom px-3">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold" href="#">
+          <img
+            src="https://res.cloudinary.com/dc0qqgkmp/image/upload/v1749217188/workclimb/workclimb-logo.svg"
+            alt="WorkClimb"
+            height="70"
+          />
+        </a>
+
+        <!-- Botão para menu mobile -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Conteúdo do menu -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <!-- Links -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Vagas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Gere seu Currículo</a>
+            </li>
+          </ul>
+
+          <!-- Barra de pesquisa -->
+          <form class="d-flex me-3" role="search">
+            <input
+              class="form-control"
+              type="search"
+              placeholder="Buscar..."
+              aria-label="Buscar"
+            />
+          </form>
+
+          <!-- Botão de login -->
+          <button class="btn btn-dark text-white" type="button">Login</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Bootstrap JS Bundle (inclui Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

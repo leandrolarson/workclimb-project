@@ -36,6 +36,7 @@
   },
   "homepage": "https://github.com/leandrolarson/workclimb-project#readme",
   "dependencies": {
+    "bootstrap": "^5.3.6",
     "jquery": "^3.7.1",
     "xyz": "^5.0.0"
   },

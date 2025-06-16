@@ -59,3 +59,13 @@
     height: 500px;
   }
 }
+
+.parallax-section {
+  background-image: url("https://res.cloudinary.com/dc0qqgkmp/image/upload/v1750105016/framework-css/pexels-ono-kosuki-5999972_kntbqh.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: white;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}

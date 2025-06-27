@@ -2,17 +2,15 @@
   white-space: pre-line;
 }
 
-/* --- EFEITO DE NAVBAR TRANSPARENTE COM HOVER --- */
-.navbar-transparent {
-  background-color: transparent;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  z-index: 999;
+body {
+  padding-top: 90px;
 }
 
-.navbar-transparent .navbar-brand,
-.navbar-transparent .nav-link,
-.navbar-transparent .btn {
-  color: white !important;
+/* --- EFEITO DE NAVBAR TRANSPARENTE COM HOVER --- */
+.navbar-transparent {
+  background-color: white !important;
+  color: #254866;
+  transition: none !important;
 }
 
 .navbar-transparent:hover {

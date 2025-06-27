@@ -65,86 +65,155 @@
 
     <div class="container my-5">
       <h2 class="mb-4 text-center">Gerador de Currículo</h2>
-
       <form id="formCurriculo" class="bg-white p-4 shadow rounded">
-        <h4 class="mb-3">1. Dados Pessoais</h4>
-        <div class="row mb-3">
-          <div class="col-md-6">
-            <label for="nome" class="form-label">Nome Completo</label>
-            <input
-              type="text"
-              id="nome"
-              class="form-control"
-              autofocus
-              required
-            />
+        <!-- ETAPA 1: Dados Pessoais -->
+        <div class="form-step" id="step-1">
+          <h4 class="mb-3">1. Dados Pessoais</h4>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="nome" class="form-label">Nome Completo</label>
+              <input
+                type="text"
+                id="nome"
+                class="form-control"
+                required
+                autofocus
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" class="form-control" required />
+            </div>
           </div>
-          <div class="col-md-6">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" id="email" class="form-control" required />
+
+          <div class="row mb-3">
+            <div class="col-md-4">
+              <label for="idade" class="form-label">Idade</label>
+              <input type="number" id="idade" class="form-control" />
+            </div>
+            <div class="col-md-4">
+              <label for="genero" class="form-label">Gênero</label>
+              <select id="genero" class="form-select">
+                <option value="">Selecione</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label for="estadoCivil" class="form-label">Estado Civil</label>
+              <input type="text" id="estadoCivil" class="form-control" />
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="telefone" class="form-label">Telefone</label>
+              <input type="text" id="telefone" class="form-control" />
+            </div>
+            <div class="col-md-6">
+              <label for="celular" class="form-label">Celular</label>
+              <input type="text" id="celular" class="form-control" />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="endereco" class="form-label">Endereço</label>
+            <input type="text" id="endereco" class="form-control" />
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="cidade" class="form-label">Cidade</label>
+              <input type="text" id="cidade" class="form-control" />
+            </div>
+            <div class="col-md-3">
+              <label for="estado" class="form-label">Estado</label>
+              <input type="text" id="estado" class="form-control" />
+            </div>
+            <div class="col-md-3">
+              <label for="cep" class="form-label">CEP</label>
+              <input type="text" id="cep" class="form-control" />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="objetivo" class="form-label">Objetivo</label>
+            <textarea id="objetivo" class="form-control" rows="2"></textarea>
+          </div>
+
+          <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-success next-step">
+              Seguinte
+            </button>
           </div>
         </div>
 
-        <div class="row mb-3">
-          <div class="col-md-4">
-            <label for="idade" class="form-label">Idade</label>
-            <input type="number" id="idade" class="form-control" />
+        <!-- ETAPA 2: Formação Acadêmica -->
+        <div class="form-step d-none" id="step-2">
+          <h4 class="mb-3">2. Formação Acadêmica</h4>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="curso" class="form-label">Curso</label>
+              <input type="text" id="curso" class="form-control" />
+            </div>
+            <div class="col-md-4">
+              <label for="instituicao" class="form-label">Instituição</label>
+              <input type="text" id="instituicao" class="form-control" />
+            </div>
+            <div class="col-md-2">
+              <label for="anoConclusao" class="form-label"
+                >Ano de Conclusão</label
+              >
+              <input type="text" id="anoConclusao" class="form-control" />
+            </div>
           </div>
-          <div class="col-md-4">
-            <label for="genero" class="form-label">Gênero</label>
-            <input type="text" id="genero" class="form-control" />
-          </div>
-          <div class="col-md-4">
-            <label for="estadoCivil" class="form-label">Estado Civil</label>
-            <input type="text" id="estadoCivil" class="form-control" />
+
+          <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-secondary prev-step">
+              Anterior
+            </button>
+            <button type="button" class="btn btn-success next-step">
+              Seguinte
+            </button>
           </div>
         </div>
 
-        <div class="row mb-3">
-          <div class="col-md-6">
-            <label for="telefone" class="form-label">Telefone</label>
-            <input type="text" id="telefone" class="form-control" />
+        <!-- ETAPA 3: Experiência Profissional -->
+        <div class="form-step d-none" id="step-3">
+          <h4 class="mb-3">3. Experiência Profissional</h4>
+          <div class="mb-3">
+            <label for="empresa" class="form-label">Empresa</label>
+            <input type="text" id="empresa" class="form-control" />
           </div>
-          <div class="col-md-6">
-            <label for="celular" class="form-label">Celular</label>
-            <input type="text" id="celular" class="form-control" />
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="inicio" class="form-label">Início em</label>
+              <input type="text" id="inicio" class="form-control" />
+            </div>
+            <div class="col-md-6">
+              <label for="fim" class="form-label">Fim em</label>
+              <input type="text" id="fim" class="form-control" />
+            </div>
           </div>
-        </div>
+          <div class="mb-3">
+            <label for="cargo" class="form-label">Cargo</label>
+            <input type="text" id="cargo" class="form-control" />
+          </div>
+          <div class="mb-3">
+            <label for="descricao" class="form-label"
+              >Descrição das Atividades</label
+            >
+            <textarea id="descricao" class="form-control" rows="3"></textarea>
+          </div>
 
-        <div class="mb-3">
-          <label for="endereco" class="form-label">Endereço</label>
-          <input type="text" id="endereco" class="form-control" />
-        </div>
-
-        <div class="row mb-3">
-          <div class="col-md-6">
-            <label for="cidade" class="form-label">Cidade</label>
-            <input type="text" id="cidade" class="form-control" />
+          <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-secondary prev-step">
+              Anterior
+            </button>
+            <button type="submit" class="btn btn-primary">
+              Gerar Currículo
+            </button>
           </div>
-          <div class="col-md-3">
-            <label for="estado" class="form-label">Estado</label>
-            <input type="text" id="estado" class="form-control" />
-          </div>
-          <div class="col-md-3">
-            <label for="cep" class="form-label">CEP</label>
-            <input type="text" id="cep" class="form-control" />
-          </div>
-        </div>
-
-        <h4 class="mt-4 mb-2">2. Objetivo</h4>
-        <div class="mb-3">
-          <label for="objetivo" class="form-label">Frase de objetivo</label>
-          <textarea id="objetivo" class="form-control" rows="2"></textarea>
-        </div>
-
-        <div class="d-flex gap-2">
-          <button type="submit" class="btn btn-primary">Gerar Currículo</button>
-          <button type="button" id="btnLimpar" class="btn btn-secondary">
-            Limpar
-          </button>
-          <button type="button" id="btnImprimir" class="btn btn-success">
-            Imprimir
-          </button>
         </div>
       </form>
 

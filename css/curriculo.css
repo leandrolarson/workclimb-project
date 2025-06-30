@@ -1,9 +1,12 @@
 #curriculoGerado {
   white-space: pre-line;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
 }
 
 body {
   padding-top: 90px;
+  background-color: #02b1aa;
 }
 
 /* --- EFEITO DE NAVBAR TRANSPARENTE COM HOVER --- */
@@ -37,7 +40,7 @@ body {
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: currentColor; /* Usa a cor atual do texto */
+  background-color: currentColor;
   transition: width 0.3s ease;
 }
 
@@ -45,6 +48,7 @@ body {
   width: 100%;
 }
 
+/* Carrossel responsivo */
 .carousel-item img {
   height: 300px;
   object-fit: cover;
@@ -62,6 +66,7 @@ body {
   }
 }
 
+/* Parallax */
 .parallax-section {
   background-image: url("https://res.cloudinary.com/dc0qqgkmp/image/upload/v1750105016/framework-css/pexels-ono-kosuki-5999972_kntbqh.jpg");
   background-size: cover;
@@ -70,4 +75,43 @@ body {
   min-height: 100vh;
   color: white;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Validação visual */
+input:invalid,
+select:invalid,
+textarea:invalid {
+  border-color: #dc3545;
+  background-color: #fff5f5;
+}
+
+input:valid,
+select:valid,
+textarea:valid {
+  border-color: #198754;
+}
+
+/* Oculta todos os spans de erro por padrão */
+span.text-danger {
+  display: none;
+}
+
+/* Exibe mensagem de erro quando campo for inválido e tocado via JS */
+span.text-danger.visible {
+  display: block;
+}
+
+/* Etapas do formulário */
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+
+/* Botões de navegação */
+button.next-step,
+button.prev-step {
+  min-width: 120px;
 }

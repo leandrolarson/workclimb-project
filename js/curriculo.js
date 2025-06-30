@@ -38,25 +38,28 @@ const btnAnterior = document.querySelectorAll(".prev-step");
 const steps = document.querySelectorAll(".form-step");
 let currentStep = 0;
 
+function showStep(index) {
+  steps.forEach((step, i) => {
+    step.classList.toggle("d-none", i !== index);
+  });
+}
+
 btnSeguinte.forEach((btn) => {
   btn.addEventListener("click", function () {
     const dados = getFormData();
     if (currentStep === 0) {
-      // Validate first step
       if (!dados.nome || !dados.email) {
         alert("Preencha os dados pessoais antes de seguir.");
         return;
       }
     }
     if (currentStep === 1) {
-      // Validate second step
       if (!dados.curso || !dados.instituicao) {
         alert("Preencha os dados da formação acadêmica antes de seguir.");
         return;
       }
     }
     if (currentStep === 2) {
-      // Validate third step
       if (!dados.empresa || !dados.cargo) {
         alert("Preencha os dados de experiência profissional antes de seguir.");
         return;
@@ -65,7 +68,9 @@ btnSeguinte.forEach((btn) => {
 
     steps[currentStep].classList.add("d-none");
     currentStep++;
-    steps[currentStep].classList.remove("d-none");
+    if (currentStep < steps.length) {
+      steps[currentStep].classList.remove("d-none");
+    }
   });
 });
 
@@ -127,3 +132,6 @@ btnImprimir.addEventListener("click", () => {
     alert("Gere um currículo antes de imprimir.");
   }
 });
+
+// Exibição inicial
+showStep(currentStep);

@@ -233,6 +233,74 @@
         </div>
 
         <!-- Etapas seguintes (passo 2 e 3) mantidas como estão -->
+ <!-- ETAPA 2: Formação Acadêmica -->
+        <div class="form-step d-none" id="step-2">
+          <h4 class="mb-3">2. Formação Acadêmica</h4>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="curso" class="form-label">Curso</label>
+              <input type="text" id="curso" class="form-control" />
+            </div>
+            <div class="col-md-4">
+              <label for="instituicao" class="form-label">Instituição</label>
+              <input type="text" id="instituicao" class="form-control" />
+            </div>
+            <div class="col-md-2">
+              <label for="anoConclusao" class="form-label"
+                >Ano de Conclusão</label
+              >
+              <input type="text" id="anoConclusao" class="form-control" />
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-secondary prev-step">
+              Anterior
+            </button>
+            <button type="button" class="btn btn-success next-step">
+              Seguinte
+            </button>
+          </div>
+        </div>
+
+        <!-- ETAPA 3: Experiência Profissional -->
+        <div class="form-step d-none" id="step-3">
+          <h4 class="mb-3">3. Experiência Profissional</h4>
+          <div class="mb-3">
+            <label for="empresa" class="form-label">Empresa</label>
+            <input type="text" id="empresa" class="form-control" />
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="inicio" class="form-label">Início em</label>
+              <input type="text" id="inicio" class="form-control" />
+            </div>
+            <div class="col-md-6">
+              <label for="fim" class="form-label">Fim em</label>
+              <input type="text" id="fim" class="form-control" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="cargo" class="form-label">Cargo</label>
+            <input type="text" id="cargo" class="form-control" />
+          </div>
+          <div class="mb-3">
+            <label for="descricao" class="form-label"
+              >Descrição das Atividades</label
+            >
+            <textarea id="descricao" class="form-control" rows="3"></textarea>
+          </div>
+
+          <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-secondary prev-step">
+              Anterior
+            </button>
+            <button type="submit" class="btn btn-primary">
+              Gerar Currículo
+            </button>
+          </div>
+        </div>
+      </form>
       </form>
 
       <div class="mt-5">

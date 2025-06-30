@@ -1,0 +1,74 @@
+/* --- NAVBAR DINÂMICA PARA A HOME --- */
+.navbar-dynamic {
+  background-color: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo dos links quando a navbar está transparente */
+.navbar-dynamic .navbar-brand,
+.navbar-dynamic .nav-link,
+.navbar-dynamic .btn {
+  color: white !important;
+}
+
+/* Estilo ao passar o mouse ou quando a página é rolada */
+.navbar-dynamic:hover,
+.navbar-dynamic.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-dynamic:hover .navbar-brand,
+.navbar-dynamic:hover .nav-link,
+.navbar-dynamic.scrolled .navbar-brand,
+.navbar-dynamic.scrolled .nav-link {
+  color: #254866 !important;
+}
+
+/* --- EFEITO DE SUBLINHADO ANIMADO NOS LINKS --- */
+.navbar-nav .nav-link {
+  position: relative;
+  transition: color 0.2s;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: currentColor; /* Usa a cor atual do texto */
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.carousel-item img {
+  height: 300px;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .carousel-item img {
+    height: 400px;
+  }
+}
+
+@media (min-width: 992px) {
+  .carousel-item img {
+    height: 500px;
+  }
+}
+
+.parallax-section {
+  background-image: url("https://res.cloudinary.com/dc0qqgkmp/image/upload/v1750105016/framework-css/pexels-ono-kosuki-5999972_kntbqh.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: white;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}

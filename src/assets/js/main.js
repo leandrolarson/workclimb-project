@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Carrega o Footer
-  fetch("footer.html")
+  fetch("templates/footer.html")
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("footer-placeholder").innerHTML = data;
     });
 
   // Carrega a Navbar e aplica o estilo correto
-  fetch("navbar.html")
+  fetch("templates/navbar.html")
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("navbar-placeholder").innerHTML = data;

@@ -1,4 +1,3 @@
-// A classe Curriculo e as constantes iniciais permanecem as mesmas...
 class Curriculo {
   constructor(dados) {
     Object.assign(this, dados);
@@ -36,55 +35,35 @@ const btnSeguinte = document.querySelectorAll(".next-step");
 const btnAnterior = document.querySelectorAll(".prev-step");
 let currentStep = 0;
 
-// --- NOVAS FUNÇÕES PARA CONTROLAR ERROS NOS SPANS ---
-
-/**
- * Exibe a mensagem de erro para um campo específico.
- * @param {string} inputId O ID do campo (ex: "nome").
- */
 function showError(inputId) {
   const input = document.getElementById(inputId);
   const errorSpan = document.getElementById(`erro-${inputId}`);
   if (errorSpan) {
-    errorSpan.classList.remove("d-none"); // Mostra o span
+    errorSpan.classList.remove("d-none");
   }
   if (input) {
-    input.classList.add("is-invalid"); // Adiciona a borda vermelha do Bootstrap
+    input.classList.add("is-invalid");
   }
 }
 
-/**
- * Esconde a mensagem de erro para um campo específico.
- * @param {string} inputId O ID do campo (ex: "nome").
- */
 function hideError(inputId) {
   const input = document.getElementById(inputId);
   const errorSpan = document.getElementById(`erro-${inputId}`);
   if (errorSpan) {
-    errorSpan.classList.add("d-none"); // Esconde o span
+    errorSpan.classList.add("d-none");
   }
   if (input) {
-    input.classList.remove("is-invalid"); // Remove a borda vermelha
+    input.classList.remove("is-invalid");
   }
 }
 
-// --- LÓGICA DE VALIDAÇÃO ATUALIZADA ---
-
-/**
- * Valida os campos de uma única etapa usando o sistema de validação do navegador.
- * @param {number} stepIndex O índice da etapa a ser validada.
- * @returns {boolean} Retorna true se a etapa for válida, false caso contrário.
- */
 function validateStep(stepIndex) {
   const currentStepElement = steps[stepIndex];
   const inputs = currentStepElement.querySelectorAll("input, select, textarea");
   let isStepValid = true;
 
   inputs.forEach((input) => {
-    // Esconde erros antigos antes de validar novamente
     hideError(input.id);
-
-    // checkValidity() verifica required, pattern, min, max, etc.
     if (!input.checkValidity()) {
       showError(input.id);
       isStepValid = false;
@@ -102,7 +81,6 @@ function validateForm() {
     }
   }
 
-  // Se o formulário for inválido, vai para a primeira etapa com erro
   if (!isFormValid) {
     const firstInvalidInput = form.querySelector(".is-invalid");
     if (firstInvalidInput) {
@@ -114,10 +92,21 @@ function validateForm() {
   return isFormValid;
 }
 
+// ****** FUNÇÃO CORRIGIDA ******
 function showStep(index) {
   steps.forEach((step, i) => {
-    step.style.display = i === index ? "block" : "none";
+    // Remove a classe 'active' de todas as etapas
+    step.classList.remove("active");
+    // Garante que todas as etapas, exceto a correta, estejam escondidas
+    if (i !== index) {
+      step.classList.add("d-none");
+    }
   });
+
+  // Mostra a etapa correta removendo 'd-none' e adicionando 'active'
+  steps[index].classList.remove("d-none");
+  steps[index].classList.add("active");
+
   currentStep = index;
 }
 
@@ -139,18 +128,29 @@ btnAnterior.forEach((btn) => {
   });
 });
 
+// VERSÃO UNIFICADA E CORRIGIDA DO EVENTO 'SUBMIT'
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
   if (validateForm()) {
     const dados = getFormData();
+
+    // Lógica para salvar no localStorage
+    const curriculosSalvos =
+      JSON.parse(localStorage.getItem("curriculos")) || [];
+    dados.id = Date.now();
+    curriculosSalvos.push(dados);
+    localStorage.setItem("curriculos", JSON.stringify(curriculosSalvos));
+
+    // Exibe o currículo gerado na tela
     const curriculo = new Curriculo(dados);
     divResultado.textContent = curriculo.formatar();
     divResultado.scrollIntoView({ behavior: "smooth" });
+
+    alert("Currículo gerado e salvo com sucesso!");
   }
 });
 
-// A função getFormData e os listeners de 'Limpar' e 'Imprimir' permanecem os mesmos.
 function getFormData() {
   return {
     nome: document.querySelector("#nome").value,
@@ -177,25 +177,29 @@ function getFormData() {
 }
 
 const btnLimpar = document.querySelector("#btnLimpar");
-btnLimpar.addEventListener("click", () => {
-  form.reset();
-  steps.forEach((step) => {
-    const inputs = step.querySelectorAll("input, select, textarea");
-    inputs.forEach((input) => hideError(input.id));
+if (btnLimpar) {
+  btnLimpar.addEventListener("click", () => {
+    form.reset();
+    steps.forEach((step) => {
+      const inputs = step.querySelectorAll("input, select, textarea");
+      inputs.forEach((input) => hideError(input.id));
+    });
+    divResultado.textContent = "";
+    showStep(0);
+    document.querySelector("#nome").focus();
   });
-  divResultado.textContent = "";
-  showStep(0);
-  document.querySelector("#nome").focus();
-});
+}
 
 const btnImprimir = document.querySelector("#btnImprimir");
-btnImprimir.addEventListener("click", () => {
-  if (divResultado.textContent.trim() !== "") {
-    window.print();
-  } else {
-    alert("Gere um currículo antes de imprimir.");
-  }
-});
+if (btnImprimir) {
+  btnImprimir.addEventListener("click", () => {
+    if (divResultado.textContent.trim() !== "") {
+      window.print();
+    } else {
+      alert("Gere um currículo antes de imprimir.");
+    }
+  });
+}
 
 // Exibição inicial
 showStep(0);

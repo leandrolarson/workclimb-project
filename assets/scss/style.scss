@@ -1,6 +1,9 @@
 // 1. Importa as variáveis para que possam ser usadas neste arquivo
 @import "variables";
 
+// 2. Importa a tipografia responsiva
+@import "typography";
+
 /* --- NAVBAR DINÂMICA PARA A HOME --- */
 .navbar-dynamic {
   background-color: transparent;

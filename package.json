@@ -7,7 +7,13 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "build": "echo 'Sem build necessário para o back-end em JavaScript puro.'",
-    "test": "jest"
+    "test": "jest",
+    "lint:js": "eslint assets/js/**/*.js",
+    "lint:scss": "stylelint assets/scss/**/*.scss",
+    "lint": "npm run lint:js && npm run lint:scss",
+    "fix:js": "eslint assets/js/**/*.js --fix",
+    "fix:scss": "stylelint assets/scss/**/*.scss --fix",
+    "fix": "npm run fix:js && npm run fix:scss"
   },
   "repository": {
     "type": "git",
@@ -38,5 +44,11 @@
   "dependencies": {
     "bootstrap": "^5.3.6"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.32.0",
+    "stylelint": "^16.21.1",
+    "stylelint-config-standard-scss": "^15.0.1"
+  }
 }

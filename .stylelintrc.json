@@ -1,0 +1,7 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "scss/selector-no-union-class-name": true,
+    "max-nesting-depth": null
+  }
+}

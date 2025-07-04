@@ -1,0 +1,14 @@
+{
+  "extends": "airbnb-base",
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "bootstrap": "readonly"
+  },
+  "rules": {
+    "no-alert": "off",
+    "no-use-before-define": ["error", { "classes": false }],
+    "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"]
+  }
+}

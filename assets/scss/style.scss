@@ -1,14 +1,9 @@
-// 1. Importa as variáveis para que possam ser usadas neste arquivo
 @import "variables";
 
-// 2. Importa a tipografia responsiva
 @import "typography";
 
-// ===================================================================
-// 3. ESTILOS DE COMPONENTES GENÉRICOS (A Correção Acontece Aqui)
-// ===================================================================
+@import "vagas";
 
-// Estilo base para todos os botões do projeto
 .btn {
   border-radius: 8px;
   padding: 0.75rem 1.5rem;
@@ -17,7 +12,6 @@
   border: 2px solid transparent;
 }
 
-// Botão Primário (Amarelo)
 .btn-primary {
   background-color: $amber;
   color: $delft-blue;
@@ -29,7 +23,6 @@
   }
 }
 
-// Estilo base para os links da navbar
 .navbar-nav .nav-link {
   position: relative;
   transition: color 0.2s;
@@ -50,17 +43,11 @@
   width: 100%;
 }
 
-// ===================================================================
-// 4. ESTILOS DE COMPONENTES ESPECÍFICOS E LAYOUT
-// ===================================================================
-
-/* --- NAVBAR DINÂMICA PARA A HOME --- */
 .navbar-dynamic {
   background-color: transparent;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-// ESTA REGRA AGORA VEM DEPOIS DO .btn GENÉRICO
 .navbar-dynamic .navbar-brand,
 .navbar-dynamic .nav-link,
 .navbar-dynamic .btn {
@@ -73,7 +60,6 @@
   box-shadow: 0 2px 10px rgb(0 0 0 / 10%);
 }
 
-// ESTA REGRA AGORA VEM DEPOIS DO .nav-link GENÉRICO
 .navbar-dynamic:hover .navbar-brand,
 .navbar-dynamic:hover .nav-link,
 .navbar-dynamic.scrolled .navbar-brand,
@@ -81,7 +67,6 @@
   color: $delft-blue !important;
 }
 
-/* --- OUTROS ESTILOS DE LAYOUT --- */
 .carousel-item img {
   height: 300px;
   object-fit: cover;
@@ -109,7 +94,6 @@
   text-shadow: 0 1px 4px rgb(0 0 0 / 60%);
 }
 
-// Garante que o container principal da página de currículo comece oculto
 .curriculo-container {
   display: none;
 }

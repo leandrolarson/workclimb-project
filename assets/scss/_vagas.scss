@@ -1,0 +1,58 @@
+.search-section .form-control-lg {
+  padding-right: 60px;
+}
+
+.search-section .btn {
+  border-radius: 0 8px 8px 0;
+  padding: 0 1.25rem;
+}
+
+.job-card {
+  background-color: $white;
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.2s ease-in-out;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba($black, 0.1);
+  }
+}
+
+.job-card-header {
+  margin-bottom: 1rem;
+}
+
+.job-card-logo {
+  max-height: 40px;
+  max-width: 120px;
+}
+
+.job-card-body {
+  flex-grow: 1;
+}
+
+.job-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: $delft-blue;
+}
+
+.job-card-company,
+.job-card-level {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 0.25rem;
+}
+
+.job-card-footer {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #6c757d;
+  display: flex;
+  justify-content: space-between;
+}

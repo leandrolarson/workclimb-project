@@ -9,7 +9,6 @@ body {
   background-color: #02b1aa;
 }
 
-/* --- NAVBAR SÓLIDA PARA A PÁGINA DO CURRÍCULO --- */
 .navbar-solid {
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -21,10 +20,9 @@ body {
 }
 
 .navbar-solid .nav-link.active {
-  font-weight: bold; /* Apenas um exemplo para destacar o link ativo */
+  font-weight: bold;
 }
 
-/* Validação visual */
 input:invalid,
 select:invalid,
 textarea:invalid {
@@ -38,17 +36,14 @@ textarea:valid {
   border-color: #198754;
 }
 
-/* Oculta todos os spans de erro por padrão */
 span.text-danger {
   display: none;
 }
 
-/* Exibe mensagem de erro quando campo for inválido e tocado via JS */
 span.text-danger.visible {
   display: block;
 }
 
-/* Etapas do formulário */
 .form-step {
   display: none;
 }
@@ -57,7 +52,6 @@ span.text-danger.visible {
   display: block;
 }
 
-/* Botões de navegação */
 button.next-step,
 button.prev-step {
   min-width: 120px;
